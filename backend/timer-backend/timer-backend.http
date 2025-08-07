@@ -1,0 +1,6 @@
+@timer_backend_HostAddress = http://localhost:5293
+
+GET {{timer_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
