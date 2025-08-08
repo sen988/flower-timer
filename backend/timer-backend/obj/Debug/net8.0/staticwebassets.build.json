@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "eauh57jLdNpeY7qT5LLu6+2SoJLzQHEI4ZN/jqULIaI=",
+  "Source": "timer-backend",
+  "BasePath": "_content/timer-backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
