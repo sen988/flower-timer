@@ -10,7 +10,7 @@ using TimerBackend.Data;
 namespace TimerBackend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250808101845_InitialCreate")]
+    [Migration("20250812112139_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

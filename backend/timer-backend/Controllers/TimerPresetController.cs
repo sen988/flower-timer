@@ -25,9 +25,30 @@ namespace TimerBackend.Controllers
         [HttpPost]
         public async Task<ActionResult<TimerPreset>> CreatePreset(TimerPreset preset)
         {
+            if (preset.Minutes <= 0)
+            {
+                return BadRequest("Preset minutes must be greater than zero.");
+            }
+
             _context.Presets.Add(preset);
             await _context.SaveChangesAsync();
+
             return CreatedAtAction(nameof(GetPresets), new { id = preset.Id }, preset);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeletePreset(int id)
+        {
+            var preset = await _context.Presets.FindAsync(id);
+            if (preset == null)
+            {
+                return NotFound();
+            }
+
+            _context.Presets.Remove(preset);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
     }
 }
