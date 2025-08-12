@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("timer-backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7442ba9aa061f58cda7d83d493d2bdabc26e9cba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+affee5df2b585f686135f0e6436ef3520babd068")]
 [assembly: System.Reflection.AssemblyProductAttribute("timer-backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("timer-backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
