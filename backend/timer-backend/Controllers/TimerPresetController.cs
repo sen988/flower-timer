@@ -30,16 +30,25 @@ namespace TimerBackend.Controllers
                 return BadRequest("Preset minutes must be greater than zero.");
             }
 
+            //check for dupes
+            var existingPreset = await _context.Presets
+                .AnyAsync(p => p.Minutes == preset.Minutes);
+
+            if (existingPreset)
+            {
+                return Conflict("Preset with this duration already exists.");
+            }
+
             _context.Presets.Add(preset);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetPresets), new { id = preset.Id }, preset);
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePreset(int id)
+        [HttpDelete("{minutes}")]
+        public async Task<IActionResult> DeletePreset(int minutes)
         {
-            var preset = await _context.Presets.FindAsync(id);
+            var preset = await _context.Presets.FirstOrDefaultAsync(p => p.Minutes == minutes);
             if (preset == null)
             {
                 return NotFound();
